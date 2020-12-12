@@ -1,12 +1,14 @@
+from pip._vendor.distlib.compat import raw_input
+
 from helpers import Stack, parse_expression, is_number, is_operator
 
 
-def evaluate_infix_notation(expr):
+def evaluate_infix_notation(expression):
     """
         Evaluate a given expression in infix notation.
         Assuming full parenthesis with single space separation.
     """
-    expr = parse_expression(expr)
+    expr = parse_expression(expression)
 
     value_stack = Stack()
     operator_stack = Stack()
@@ -64,16 +66,10 @@ def evaluate_infix_notation(expr):
 
 
 if __name__ == "__main__":
-    print(evaluate_infix_notation("( 1 + 2 )"))  # expected 3
-    print(evaluate_infix_notation("( 1 + ( 2 * 3 ) )"))  # expected 7
-    print(evaluate_infix_notation("( ( 1 * 2 ) + 3 )"))  # expected 5
-    print(evaluate_infix_notation("( ( ( 1 + 1 ) / 10 ) - ( 1 * 2 ) )"))  # expected -1.8
-    print(evaluate_infix_notation("( 10 - ( 2 * 12 ) )"))  # expected -14
-    print(evaluate_infix_notation("( ( 5 + 4 ) - ( 2 * 0 ) )"))  # expected 9
-    print(evaluate_infix_notation("( 15 / ( 1 - 1 ) )"))  # expected division by zero
-
-
-
+    print("Enter expression in infix notation, parenthesis, "
+          "numbers and operators should be space separated:")
+    expr = raw_input()
+    print(evaluate_infix_notation(expr))
 
 
 

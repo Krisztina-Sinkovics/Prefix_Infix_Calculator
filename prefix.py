@@ -1,11 +1,13 @@
+from pip._vendor.distlib.compat import raw_input
+
 from helpers import Stack, parse_expression, is_number
 
 
-def evaluate_prefix_notation(expr):
+def evaluate_prefix_notation(expression):
     """
     Evaluate a given expression in prefix notation.
     """
-    expression = parse_expression(expr)
+    expression = parse_expression(expression)
     stack = Stack()
 
     # iterate from the end to start
@@ -41,29 +43,6 @@ def evaluate_prefix_notation(expr):
 
 
 if __name__ == "__main__":
-    test_expression1 = "+ 9 * 2 6"
-    print(evaluate_prefix_notation(test_expression1))
-
-    test_expression2 = "3"
-    print(evaluate_prefix_notation(test_expression2))
-
-    test_expression3 = "+ 1 2"
-    print(evaluate_prefix_notation(test_expression3))
-
-    test_expression4 = "+ 1 * 2 3"
-    print(evaluate_prefix_notation(test_expression4))
-
-    test_expression5 = "+ * 1 2 3"
-    print(evaluate_prefix_notation(test_expression5))
-
-    test_expression6 = "- / 10 + 1 1 * 1 2"
-    print(evaluate_prefix_notation(test_expression6))
-
-    test_expression7 = "- 0 3"
-    print(evaluate_prefix_notation(test_expression7))
-
-    test_expression8 = "/ 3 2"
-    print(evaluate_prefix_notation(test_expression8))
-
-    test_expression8 = "/ 3 0"
-    print(evaluate_prefix_notation(test_expression8))
+    print("Enter expression in prefix notation, elements shoudld be space separated:")
+    expr = raw_input()
+    print(evaluate_prefix_notation(expr))
