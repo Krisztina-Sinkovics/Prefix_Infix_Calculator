@@ -2,7 +2,8 @@ This is a repository hosting a simple calculator that can handle prefix and infi
 
 ### Requirements:
 python version: 3.7  
-testing: pytest
+testing: pytest  
+application: flask, wtforms
 
 ### Assumptions:
 - All the tokens are space-separated, including the parenethesis tokens for infix notation
