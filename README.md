@@ -3,8 +3,13 @@ You can interact with it both as a web-based application and as a standalone scr
 
 ### Requirements:
 python version: 3.7  
-testing: pytest  
-application: flask, wtforms
+testing:  
+pytest==6.1.2  
+
+app:  
+flask==1.1.2  
+wtforms==2.3.3
+
 
 ### Assumptions:
 - All the tokens are space-separated, including the parenethesis tokens for infix notation
