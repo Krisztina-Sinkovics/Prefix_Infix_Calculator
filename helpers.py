@@ -1,3 +1,5 @@
+from pip._vendor.distlib.compat import raw_input
+
 class Stack:
     def __init__(self):
         self.items = []
